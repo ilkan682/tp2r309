@@ -8,7 +8,7 @@ class personnage:
         self.__pseudo = pseudo
         self.__niveau = niveau
 
-        # CORRECTION ICI : Si on ne donne pas de pv/init, ils sont égaux au niveau !
+        
         self.__pv = niveau if pv is None else pv
         self.__initiative = niveau if initiative is None else initiative
 
@@ -54,7 +54,7 @@ class personnage:
             self.attaque(autre)
             print(f"{self.__pseudo} (pv: {self.__pv}) vs {autre.pseudo} (pv: {autre.pv})")
 
-    # Méthode explicitement demandée dans la partie 4 pour comparer avec "=="
+    
     def __eq__(self, autre) -> bool:
         if isinstance(autre, personnage): return self.__pseudo == autre.pseudo
         return False
